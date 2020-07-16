@@ -4,7 +4,7 @@
   "author": {
     "name": "Dennis Ameling"
   },
-  "version": "0.0.2",
+  "version": "0.0.4",
   "peerDependencies": {
     "@angular/common": ">=9.0.0",
     "@angular/core": ">=9.0.0",
