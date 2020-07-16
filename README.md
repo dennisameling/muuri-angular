@@ -1,5 +1,7 @@
 # muuri-angular
 
+[![npm version](https://badge.fury.io/js/muuri-angular.svg)](https://badge.fury.io/js/muuri-angular) ![](https://github.com/dennisameling/muuri-angular/workflows/Angular%20library/badge.svg)
+
 Angular wrapper around the [Muuri JavaScript library](https://github.com/haltu/muuri).
 
 Do you have any requests or improvements? Feel free to create an issue or PR.
