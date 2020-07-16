@@ -1,0 +1,20 @@
+{
+  "name": "muuri-angular",
+  "license": "MIT",
+  "author": {
+    "name": "Dennis Ameling"
+  },
+  "version": "0.0.2",
+  "peerDependencies": {
+    "@angular/common": ">=9.0.0",
+    "@angular/core": ">=9.0.0",
+    "muuri": "~0.9.1"
+  },
+  "repository": "dennisameling/muuri-angular",
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "keywords": [
+      "muuri"
+  ]
+}
