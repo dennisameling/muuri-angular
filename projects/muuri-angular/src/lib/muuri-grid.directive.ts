@@ -17,23 +17,23 @@ export class MuuriGridDirective implements OnInit, OnDestroy {
     /**
      * Initialize the grid.
      */
-    init(grid: ElementRef) {
+    init(grid: ElementRef): void {
         this.layout = new Grid(grid.nativeElement, this.config);
     }
 
     /**
      * Add a new item to the grid.
      */
-    addItem(item: ElementRef) {
+    addItem(item: ElementRef): void {
         this.layout.add(item.nativeElement);
     }
 
-    destroyLayout() {
+    destroyLayout(): void {
         this.layout.destroy();
         this.layout = null;
     }
 
-    refresh() {
+    refresh(): void {
         this.layout.refreshItems();
         this.layout.layout();
     }
