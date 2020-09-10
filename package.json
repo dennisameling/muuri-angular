@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:prod": "ng build muuri-angular --prod"
+    "build:prod": "ng build muuri-angular --prod",
+    "build:dev": "ng build muuri-angular --configuration=development"
   },
   "private": true,
   "dependencies": {

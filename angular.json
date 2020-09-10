@@ -18,6 +18,9 @@
           "configurations": {
             "production": {
               "tsConfig": "projects/muuri-angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/muuri-angular/tsconfig.lib.dev.json"
             }
           }
         },
