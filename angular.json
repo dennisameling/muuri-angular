@@ -42,6 +42,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "muuri-angular"
+    }
+  },
+  "defaultProject": "muuri-angular",
+  "cli": {
+    "analytics": false
+  }
 }
