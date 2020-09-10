@@ -35,7 +35,6 @@ export class MuuriGridDirective implements OnInit, OnDestroy {
 
     refresh(): void {
         this.layout.refreshItems();
-        this.layout.layout();
     }
 
     ngOnDestroy(): void {

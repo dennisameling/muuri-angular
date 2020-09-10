@@ -9,5 +9,7 @@ export class MuuriGridItemDirective implements OnInit {
 
     ngOnInit(): void {
         this.tileGrid.addItem(this.elRef);
+        // Force refresh the grid to prevent overlapping items
+        this.tileGrid.refresh();
     }
 }
