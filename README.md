@@ -12,7 +12,7 @@ Install the library with the following commands:
 
 `npm install --save muuri muuri-angular`
 
-## Usage
+## Basic Usage
 
 Add `MuuriModule` as an import to your `app.module.ts`:
 
@@ -76,6 +76,34 @@ export class AppComponent {
     addToGrid() {
         this.blockItems.push('hello');
     }
+}
+```
+
+## Advanced usage
+
+### Events
+
+Muuri exposes many [events](https://github.com/haltu/muuri#grid-events) that you can subscribe to. You can get the `Grid` object as follows:
+
+`app.component.html`
+
+```HTML
+<div muuriGrid (gridCreated)="onGridCreated($event)"></div>
+```
+
+`app.component.ts`
+
+```TypeScript
+import Grid from 'muuri';
+
+onGridCreated(grid: Grid) {
+  /**
+   * Now you can do everything you want with the Grid object,
+   * like subcribing to Muuri's events
+   */
+  grid.on('add', function (items) {
+    console.log(items);
+  });
 }
 ```
 

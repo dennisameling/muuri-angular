@@ -1,4 +1,4 @@
-import { Directive, ElementRef, OnDestroy, OnInit, Input } from '@angular/core';
+import { Directive, ElementRef, OnDestroy, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import Grid, { GridOptions } from 'muuri';
 
 @Directive({
@@ -6,7 +6,8 @@ import Grid, { GridOptions } from 'muuri';
 })
 export class MuuriGridDirective implements OnInit, OnDestroy {
     @Input() config: GridOptions;
-    layout: Grid;
+    @Output() gridCreated: EventEmitter<Grid> = new EventEmitter();
+    gridObject?: Grid;
 
     constructor(private elRef: ElementRef) {}
 
@@ -18,23 +19,24 @@ export class MuuriGridDirective implements OnInit, OnDestroy {
      * Initialize the grid.
      */
     init(grid: ElementRef): void {
-        this.layout = new Grid(grid.nativeElement, this.config);
+        this.gridObject = new Grid(grid.nativeElement, this.config);
+        this.gridCreated.emit(this.gridObject);
     }
 
     /**
      * Add a new item to the grid.
      */
     addItem(item: ElementRef): void {
-        this.layout.add(item.nativeElement);
+        this.gridObject.add(item.nativeElement);
     }
 
     destroyLayout(): void {
-        this.layout.destroy();
-        this.layout = null;
+        this.gridObject.destroy();
+        this.gridObject = null;
     }
 
     refresh(): void {
-        this.layout.refreshItems();
+        this.gridObject.refreshItems();
     }
 
     ngOnDestroy(): void {
