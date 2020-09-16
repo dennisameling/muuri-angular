@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:prod": "ng build muuri-angular --prod",
-    "build:dev": "ng build muuri-angular --configuration=development"
+    "build:ivy": "ng build muuri-angular --configuration=ivy"
   },
   "private": true,
   "dependencies": {

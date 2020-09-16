@@ -19,8 +19,8 @@
             "production": {
               "tsConfig": "projects/muuri-angular/tsconfig.lib.prod.json"
             },
-            "development": {
-              "tsConfig": "projects/muuri-angular/tsconfig.lib.dev.json"
+            "ivy": {
+              "tsConfig": "projects/muuri-angular/tsconfig.lib.ivy.json"
             }
           }
         },

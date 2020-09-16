@@ -84,9 +84,9 @@ If you want to help developing this library, please do the following to set up y
 - Set up a project that uses `muuri-angular` as a dependency.
 - Clone this repo (`muuri-angular`).
 - Run `npm install`.
-- Run `npm run build:dev`. This will build an Ivy-compatible library that you can use in Angular 9+ projects locally.
+- Run `npm run build:ivy`. This will build an Ivy-compatible library that you can use in Angular 9+ projects locally.
   - If you're still using Angular 8 or lower in your project, run `npm run build:prod` instead. This will use Angular's legacy View Engine to build the library.
 - Run `cd dist/muuri-angular`.
 - Run `npm link`.
 - In your project, run `npm link muuri-angular`. Your project will now use the local `muuri-angular` code.
-- Run `npm run build:dev -- --watch` so that the library gets rebuilt on every code change 😃
+- Run `npm run build:ivy -- --watch` so that the library gets rebuilt on every code change 😃
