@@ -1,0 +1,26 @@
+name: npm-publish
+on:
+  push:
+    tags:
+      - v*.*.*
+
+jobs:
+  npm-publish:
+    name: npm-publish
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@master
+    - name: Set up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12'
+        registry-url: 'https://registry.npmjs.org'
+    - name: Install dependencies
+      run: npm ci
+    - name: Build library
+      run: npm run build:prod
+    - name: Publish version
+      run: cd ./dist/muuri-angular && npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
