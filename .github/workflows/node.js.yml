@@ -45,7 +45,7 @@ jobs:
         tag_name: "v%s"
         tag_message: "v%s"
         commit_pattern: "^Release (\\S+)" # Only publish when a commit is created that starts with "Release ..."
-        workspace: dist/muuri-angular
+        workspace: "./dist/muuri-angular"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
