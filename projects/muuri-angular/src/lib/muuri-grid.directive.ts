@@ -42,4 +42,14 @@ export class MuuriGridDirective implements OnInit, OnDestroy {
     ngOnDestroy(): void {
         this.destroyLayout();
     }
+
+    /**
+     * Remove an item from the grid.
+     */
+    removeItem(item: ElementRef): void {
+        const gridItem = this.gridObject.getItem(item.nativeElement);
+        this.gridObject.remove([gridItem], {
+            layout: true
+        });
+    }
 }
