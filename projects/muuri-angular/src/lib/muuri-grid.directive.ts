@@ -1,10 +1,10 @@
-import { Directive, ElementRef, OnDestroy, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Directive, ElementRef, OnDestroy, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges } from '@angular/core';
 import Grid, { GridOptions, Item } from 'muuri';
 
 @Directive({
     selector: '[muuriGrid]'
 })
-export class MuuriGridDirective implements OnInit, OnDestroy {
+export class MuuriGridDirective implements OnInit, OnDestroy, OnChanges {
     @Input() config: GridOptions;
     @Output() gridCreated: EventEmitter<Grid> = new EventEmitter();
     gridObject?: Grid;
@@ -13,6 +13,17 @@ export class MuuriGridDirective implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.init(this.elRef);
+    }
+
+    /**
+     * Rebuild the grid when the Muuri config changes.
+     * @param changes Changes object.
+     */
+    ngOnChanges(changes: SimpleChanges): void {
+        if (this.gridObject) {
+            this.destroyLayout();
+            this.init(this.elRef);
+        }
     }
 
     /**
