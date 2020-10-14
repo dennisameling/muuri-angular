@@ -1,5 +1,5 @@
 import { Directive, ElementRef, OnDestroy, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import Grid, { GridOptions } from 'muuri';
+import Grid, { GridOptions, Item } from 'muuri';
 
 @Directive({
     selector: '[muuriGrid]'
@@ -26,8 +26,8 @@ export class MuuriGridDirective implements OnInit, OnDestroy {
     /**
      * Add a new item to the grid.
      */
-    addItem(item: ElementRef): void {
-        this.gridObject.add(item.nativeElement);
+    addItem(item: ElementRef): Item[] {
+        return this.gridObject.add(item.nativeElement);
     }
 
     destroyLayout(): void {

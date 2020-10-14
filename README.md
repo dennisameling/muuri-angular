@@ -107,6 +107,24 @@ onGridCreated(grid: Grid) {
 }
 ```
 
+You can also get a grid item when it is created:
+
+`app.component.html`
+
+```HTML
+<div muuriGridItem (itemCreated)="onItemCreated($event)"></div>
+```
+
+`app.component.ts`
+
+```TypeScript
+import Item from 'muuri';
+
+onItemCreated(item: Item) {
+  // Now you can do anything you want with the grid item
+}
+```
+
 ## Contributing
 If you want to help developing this library, please do the following to set up your local environment:
 - Set up a project that uses `muuri-angular` as a dependency.
