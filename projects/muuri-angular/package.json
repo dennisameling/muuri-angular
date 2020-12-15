@@ -4,7 +4,7 @@
   "author": {
     "name": "Dennis Ameling"
   },
-  "version": "0.3.0",
+  "version": "0.3.1",
   "peerDependencies": {
     "@angular/common": ">=9.0.0",
     "@angular/core": ">=9.0.0",
@@ -12,9 +12,9 @@
   },
   "repository": "dennisameling/muuri-angular",
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.3"
   },
   "keywords": [
-      "muuri"
+    "muuri"
   ]
 }
